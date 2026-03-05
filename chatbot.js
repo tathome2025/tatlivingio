@@ -8,6 +8,8 @@
   localStorage.setItem('tat_chat_session', sessionId);
 
   const conversation = [];
+  let handoffDone = false;
+  let conversationClosed = false;
 
   const addMsg = (role, text) => {
     const div = document.createElement('div');
@@ -19,6 +21,17 @@
   };
 
   addMsg('bot', 'Hi, I am TAT AI Assistant. Please tell me your project goal, timeline, and budget range.');
+
+  const hasContactInfo = (text) => {
+    const email = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i;
+    const phone = /(?:\+?\d[\d\s\-()]{6,}\d)/;
+    const socialHint = /(whatsapp|wechat|telegram|line|contact me at|reach me at)/i;
+    return email.test(text) || phone.test(text) || socialHint.test(text);
+  };
+
+  const isCloseIntent = (text) => {
+    return /\b(all good|all set|that'?s all|nothing else|done for now|no thanks|no thank you|we are good|good for now)\b/i.test(text);
+  };
 
   const fallbackReply = (message) => {
     const lower = message.toLowerCase();
@@ -55,37 +68,60 @@
     if (!message) return;
     inputEl.value = '';
     addMsg('user', message);
+
+    if (conversationClosed) {
+      conversationClosed = false;
+    }
+
+    const providedContactNow = hasContactInfo(message);
+    if (providedContactNow && !handoffDone) {
+      handoffDone = true;
+    }
+
+    if (handoffDone && isCloseIntent(message)) {
+      addMsg('bot', 'Great, have a good day. If you need anything else, just message me anytime.');
+      conversationClosed = true;
+      return;
+    }
+
     const reply = await askAI(message);
     addMsg('bot', reply);
+
+    if (providedContactNow) {
+      addMsg('bot', 'Thanks for sharing your contact details. Anything else I can help with?');
+    }
   });
 
   let sent = false;
   const sendTranscript = () => {
     if (sent || conversation.length === 0) return;
+    if (!conversation.some((m) => m.role === 'user')) return;
     sent = true;
     const payload = {
       sessionId,
+      transcriptId: `${sessionId}-${Date.now()}`,
       page: location.href,
       userAgent: navigator.userAgent,
       sentAt: new Date().toISOString(),
       conversation
     };
-
-    const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+    const serialized = JSON.stringify(payload);
     if (navigator.sendBeacon) {
-      navigator.sendBeacon('/api/send-transcript', blob);
-      return;
+      try {
+        navigator.sendBeacon('/api/send-transcript', serialized);
+      } catch {}
     }
 
     fetch('/api/send-transcript', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
+      body: serialized,
       keepalive: true
     }).catch(() => {});
   };
 
   window.addEventListener('pagehide', sendTranscript);
+  window.addEventListener('beforeunload', sendTranscript);
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') sendTranscript();
   });

@@ -4,13 +4,21 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  const to = 'tathome2025@gmail.com';
+  const to = process.env.MAIL_TO || 'tathome2025@gmail.com';
   const from = process.env.MAIL_FROM || 'TAT Chatbot <onboarding@resend.dev>';
   const resendApiKey = process.env.RESEND_API_KEY;
 
   let payload;
   try {
-    payload = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
+    let raw = req.body;
+    if (Buffer.isBuffer(raw)) {
+      raw = raw.toString('utf8');
+    }
+    if (typeof raw === 'string') {
+      payload = JSON.parse(raw || '{}');
+    } else {
+      payload = raw || {};
+    }
   } catch {
     payload = {};
   }
@@ -46,7 +54,7 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         from,
         to: [to],
-        subject: 'New TAT website chatbot transcript',
+        subject: `New TAT website chatbot transcript (${payload.sessionId || 'unknown'})`,
         text: textBody
       })
     });
