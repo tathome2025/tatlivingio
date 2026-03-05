@@ -25,7 +25,7 @@ module.exports = async function handler(req, res) {
 
   const messages = payload.conversation || [];
   if (!Array.isArray(messages) || messages.length === 0) {
-    res.status(200).json({ ok: true, skipped: true });
+    res.status(400).json({ ok: false, error: 'Missing conversation messages' });
     return;
   }
 
@@ -40,7 +40,7 @@ module.exports = async function handler(req, res) {
   ].join('\n');
 
   if (!resendApiKey) {
-    res.status(200).json({ ok: true, skipped: true, reason: 'RESEND_API_KEY not set' });
+    res.status(500).json({ ok: false, error: 'RESEND_API_KEY not set' });
     return;
   }
 
