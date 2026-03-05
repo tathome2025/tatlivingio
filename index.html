@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TAT Living Limited | AI Design Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="site">
+    <header class="navbar">
+      <div class="brand">TAT Living Limited</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <div class="badge">DESIGN + AI TECHNOLOGY</div>
+        <h1>We design future-ready digital products with AI at the core.</h1>
+        <p class="hero-body">TAT Living Limited - a Hong Kong based tech design house, helps ambitious globe brands turn ideas into intelligent websites, platforms, and customer experiences.</p>
+      </div>
+      <div class="hero-image-wrap">
+        <img src="./assets/hero.jpg" alt="TAT Living team collaboration" />
+      </div>
+    </section>
+
+    <section id="services" class="section white">
+      <h2>AI Technology Solutions for Design-Led Businesses</h2>
+      <div class="row row-3">
+        <article class="card muted"><h3>AI Product Strategy</h3><p>Roadmaps, opportunity mapping, and business-model alignment for intelligent digital products.</p><span>01</span></article>
+        <article class="card muted"><h3>Generative UX Systems</h3><p>Adaptive interfaces and content engines that personalize journeys in real time.</p><span>02</span></article>
+        <article class="card muted"><h3>AI Launch Operations</h3><p>MLOps-ready deployment, analytics instrumentation, and conversion optimization.</p><span>03</span></article>
+      </div>
+
+      <div class="row row-1">
+        <article class="card chatbot-card">
+          <h3>AI Project Assistant</h3>
+          <p>Tell us your goals, timeline, and budget. I will guide you and pass your request to TAT Living.</p>
+          <div id="chatbot-log" class="chatbot-log"></div>
+          <form id="chatbot-form" class="chatbot-form">
+            <input id="chatbot-input" type="text" placeholder="Example: We need an AI-powered website in 6 weeks..." autocomplete="off" />
+            <button type="submit" class="btn-primary small">Send</button>
+          </form>
+          <p class="chatbot-note">Conversation will be sent to us when you leave this page.</p>
+        </article>
+      </div>
+    </section>
+  </div>
+  <script src="./chatbot.js"></script>
+</body>
+</html>
