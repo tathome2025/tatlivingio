@@ -472,6 +472,22 @@ main {
 }
 .muted { color: var(--ink-mute); font-family: 'VT323', monospace; font-size: 15px; }
 
+/* ─────────── Support / donate ─────────── */
+.support-note {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'VT323', monospace;
+  font-size: 17px;
+  color: var(--ink-mute);
+  padding: 0 12px;
+  letter-spacing: 0.03em;
+}
+.support-note em {
+  font-style: normal;
+  color: var(--accent);
+  margin: 0 4px;
+}
+
 /* ─────────── Responsive niceties ─────────── */
 @media (max-width: 640px) {
   .ascii-logo { font-size: 8px; }
