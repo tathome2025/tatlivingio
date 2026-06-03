@@ -5,17 +5,17 @@
     </pattern>
   </defs>
 
-  <rect width="1200" height="800" fill="#1a1a1a"/>
+  <rect width="1200" height="800" fill="#2d2d2d"/>
   <rect width="1200" height="800" fill="url(#scanlines)"/>
 
   <!-- Y2K window chrome bar -->
-  <rect x="0" y="0" width="1200" height="46" fill="#2c2c2c"/>
+  <rect x="0" y="0" width="1200" height="46" fill="#3a3a3a"/>
   <text x="32" y="30" font-family="'IBM Plex Mono', monospace" font-size="18" fill="#ffd600">▣</text>
   <text x="60" y="30" font-family="'IBM Plex Mono', monospace" font-size="18" fill="#c4c4c4">palmvellum.exe</text>
   <text x="1100" y="30" font-family="'VT323', monospace" font-size="22" fill="#888888">_ □ ×</text>
 
   <!-- Status bar -->
-  <rect x="0" y="46" width="1200" height="36" fill="#1f1f1f"/>
+  <rect x="0" y="46" width="1200" height="36" fill="#303030"/>
   <circle cx="32" cy="64" r="5" fill="#69b945"/>
   <text x="48" y="69" font-family="'VT323', monospace" font-size="18" fill="#888888">CONNECTION: <tspan fill="#ffd600">palmdb.net</tspan></text>
   <text x="350" y="69" font-family="'VT323', monospace" font-size="18" fill="#888888">CRADLE: <tspan fill="#ffd600">cu.usbserial-FT*</tspan></text>
@@ -41,23 +41,23 @@
 
   <!-- Stats strip -->
   <g font-family="'IBM Plex Mono', monospace">
-    <rect x="120" y="700" width="120" height="60" fill="#1f1f1f"/>
+    <rect x="120" y="700" width="120" height="60" fill="#303030"/>
     <text x="180" y="734" font-size="20" font-weight="700" fill="#ffd600" text-anchor="middle">19</text>
     <text x="180" y="752" font-size="12" fill="#888888" text-anchor="middle">DEVICES</text>
 
-    <rect x="260" y="700" width="120" height="60" fill="#1f1f1f"/>
+    <rect x="260" y="700" width="120" height="60" fill="#303030"/>
     <text x="320" y="734" font-size="20" font-weight="700" fill="#ffd600" text-anchor="middle">0</text>
     <text x="320" y="752" font-size="12" fill="#888888" text-anchor="middle">RADIOS</text>
 
-    <rect x="400" y="700" width="160" height="60" fill="#1f1f1f"/>
+    <rect x="400" y="700" width="160" height="60" fill="#303030"/>
     <text x="480" y="734" font-size="20" font-weight="700" fill="#ffd600" text-anchor="middle">2× AAA</text>
     <text x="480" y="752" font-size="12" fill="#888888" text-anchor="middle">BATTERIES</text>
 
-    <rect x="580" y="700" width="120" height="60" fill="#1f1f1f"/>
+    <rect x="580" y="700" width="120" height="60" fill="#303030"/>
     <text x="640" y="734" font-size="20" font-weight="700" fill="#ffd600" text-anchor="middle">1996</text>
     <text x="640" y="752" font-size="12" fill="#888888" text-anchor="middle">OLDEST</text>
 
-    <rect x="720" y="700" width="120" height="60" fill="#1f1f1f"/>
+    <rect x="720" y="700" width="120" height="60" fill="#303030"/>
     <text x="780" y="734" font-size="20" font-weight="700" fill="#ffd600" text-anchor="middle">2003</text>
     <text x="780" y="752" font-size="12" fill="#888888" text-anchor="middle">YOUNGEST</text>
   </g>
