@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="PalmVellum — Two AAA batteries. Two decades. Zero radios.">
+  <defs>
+    <pattern id="scanlines" x="0" y="0" width="2" height="3" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="2" height="1" fill="rgba(255,255,255,0.025)"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="#1a1a1a"/>
+  <rect width="1200" height="800" fill="url(#scanlines)"/>
+
+  <!-- Y2K window chrome bar -->
+  <rect x="0" y="0" width="1200" height="46" fill="#2c2c2c"/>
+  <text x="32" y="30" font-family="'IBM Plex Mono', monospace" font-size="18" fill="#ffd600">▣</text>
+  <text x="60" y="30" font-family="'IBM Plex Mono', monospace" font-size="18" fill="#c4c4c4">palmvellum.exe</text>
+  <text x="1100" y="30" font-family="'VT323', monospace" font-size="22" fill="#888888">_ □ ×</text>
+
+  <!-- Status bar -->
+  <rect x="0" y="46" width="1200" height="36" fill="#1f1f1f"/>
+  <circle cx="32" cy="64" r="5" fill="#69b945"/>
+  <text x="48" y="69" font-family="'VT323', monospace" font-size="18" fill="#888888">CONNECTION: <tspan fill="#ffd600">palmdb.net</tspan></text>
+  <text x="350" y="69" font-family="'VT323', monospace" font-size="18" fill="#888888">CRADLE: <tspan fill="#ffd600">cu.usbserial-FT*</tspan></text>
+  <text x="700" y="69" font-family="'VT323', monospace" font-size="18" fill="#888888">SYNC: <tspan fill="#ffd600">100%</tspan></text>
+  <text x="1010" y="69" font-family="'VT323', monospace" font-size="18" fill="#888888">BAT: <tspan fill="#ffd600">██ 100%</tspan></text>
+
+  <!-- ASCII-art logo (PalmVellum) -->
+  <g font-family="'IBM Plex Mono', monospace" fill="#ffd600">
+    <text x="120" y="240" font-size="36" font-weight="700" letter-spacing="-1">PALM</text>
+    <text x="120" y="290" font-size="36" font-weight="700" letter-spacing="-1">VELLUM</text>
+  </g>
+
+  <!-- Hero text -->
+  <g font-family="'IBM Plex Mono', monospace">
+    <text x="120" y="400" font-size="46" font-weight="700" fill="#f4f4f4">some things deserve</text>
+    <text x="120" y="455" font-size="46" font-weight="700" fill="#f4f4f4">to be written down.</text>
+    <text x="120" y="540" font-size="46" font-weight="700" fill="#ffd600">not all of them deserve</text>
+    <text x="120" y="595" font-size="46" font-weight="700" fill="#ffd600">to be online.<tspan fill="#ffd600">▮</tspan></text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="120" y="660" font-family="'VT323', monospace" font-size="28" fill="#c4c4c4">the hardware vellum for the post-cloud age.</text>
+
+  <!-- Stats strip -->
+  <g font-family="'IBM Plex Mono', monospace">
+    <rect x="120" y="700" width="120" height="60" fill="#1f1f1f"/>
+    <text x="180" y="734" font-size="20" font-weight="700" fill="#ffd600" text-anchor="middle">19</text>
+    <text x="180" y="752" font-size="12" fill="#888888" text-anchor="middle">DEVICES</text>
+
+    <rect x="260" y="700" width="120" height="60" fill="#1f1f1f"/>
+    <text x="320" y="734" font-size="20" font-weight="700" fill="#ffd600" text-anchor="middle">0</text>
+    <text x="320" y="752" font-size="12" fill="#888888" text-anchor="middle">RADIOS</text>
+
+    <rect x="400" y="700" width="160" height="60" fill="#1f1f1f"/>
+    <text x="480" y="734" font-size="20" font-weight="700" fill="#ffd600" text-anchor="middle">2× AAA</text>
+    <text x="480" y="752" font-size="12" fill="#888888" text-anchor="middle">BATTERIES</text>
+
+    <rect x="580" y="700" width="120" height="60" fill="#1f1f1f"/>
+    <text x="640" y="734" font-size="20" font-weight="700" fill="#ffd600" text-anchor="middle">1996</text>
+    <text x="640" y="752" font-size="12" fill="#888888" text-anchor="middle">OLDEST</text>
+
+    <rect x="720" y="700" width="120" height="60" fill="#1f1f1f"/>
+    <text x="780" y="734" font-size="20" font-weight="700" fill="#ffd600" text-anchor="middle">2003</text>
+    <text x="780" y="752" font-size="12" fill="#888888" text-anchor="middle">YOUNGEST</text>
+  </g>
+</svg>
