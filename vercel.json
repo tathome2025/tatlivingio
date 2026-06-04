@@ -1,3 +1,9 @@
 {
-  "version": 2
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/palmvellum/app/:path*",
+      "destination": "/palmvellum/app/index.html"
+    }
+  ]
 }
