@@ -1,0 +1,1 @@
+const c="0123456789ABCDEFGHJKMNPQRSTVWXYZ";function d(){const s=BigInt(Date.now()).toString(2).padStart(48,"0"),r=crypto.getRandomValues(new Uint8Array(10));let n="";for(const t of r)n+=t.toString(2).padStart(8,"0");const e=s+n;let o="";for(let t=0;t<26;t++){const a=e.slice(t*5,t*5+5).padEnd(5,"0");o+=c[parseInt(a,2)]}return o}export{d as n};
