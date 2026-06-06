@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#2d2d2d">
-  <meta name="description" content="PalmVellum — Two AAA batteries. Two decades. Zero radios. An open-source movement reviving 1996–2003 Palm OS handhelds as useful tools for 2026.">
+  <meta name="description" data-i18n="meta.desc" content="PalmVellum — an open-source platform that pairs 1996–2003 AAA-battery Palm Pilot devices with AI assistance and cloud sync, leaving the Palm itself unmodified.">
   <meta property="og:title" content="PalmVellum">
-  <meta property="og:description" content="Some things deserve to be written down. Not all of them deserve to be online.">
+  <meta property="og:description" data-i18n="meta.og" content="Slow tools for fast lives. The Palm stays Palm.">
   <meta property="og:type" content="website">
 
-  <title>PalmVellum — Two AAA batteries. Two decades. Zero radios.</title>
+  <title>PalmVellum — Slow tools for fast lives</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;700&family=VT323&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%232d2d2d'/%3E%3Crect x='3' y='3' width='10' height='10' fill='%23ffd600'/%3E%3C/svg%3E">
@@ -27,6 +27,14 @@
       <span class="chrome-name">palmvellum.exe</span>
     </div>
     <div class="chrome-controls">
+      <select id="lang-picker" aria-label="language" class="lang-picker">
+        <option value="en">EN</option>
+        <option value="zh-TW">繁</option>
+        <option value="zh-CN">简</option>
+        <option value="ja">日</option>
+        <option value="ko">한</option>
+        <option value="ru">RU</option>
+      </select>
       <span>_</span><span>□</span><span>×</span>
     </div>
   </div>
@@ -34,10 +42,9 @@
   <!-- Status bar -->
   <div class="status-bar" aria-hidden="true">
     <span class="status-led"></span>
-    <span class="status-text">CONNECTION: <em>palmdb.net</em></span>
-    <span class="status-text">CRADLE: <em>cu.usbserial-FT*</em></span>
-    <span class="status-text">SYNC: <em>0%</em></span>
-    <span class="status-text status-right">BATTERY: <em>██ 100%</em></span>
+    <span class="status-text" data-i18n="status.cradle">CRADLE: <em>cu.usbserial-FT*</em></span>
+    <span class="status-text" data-i18n="status.sync">SYNC: <em>0%</em></span>
+    <span class="status-text status-right" data-i18n="status.battery">BATTERY: <em>██ 100%</em></span>
   </div>
 
   <main>
@@ -52,20 +59,20 @@
       </pre>
 
       <h1 class="hero-title">
-        <span class="line">some things deserve to be<br>written down.</span><br>
-        <span class="line accent">not all of them deserve to be online.<span class="cursor">▮</span></span>
+        <span class="line" data-i18n="hero.line1">slow tools</span><br>
+        <span class="line accent" data-i18n="hero.line2">for fast lives.<span class="cursor">▮</span></span>
       </h1>
 
-      <p class="hero-sub">the hardware vellum for the post-cloud age.</p>
+      <p class="hero-sub" data-i18n="hero.sub">An open-source platform that pairs 1996–2003 AAA-battery Palm Pilot devices with AI assistance and cloud sync — while leaving the Palm itself completely alone.</p>
 
       <div class="cta-row">
-        <a class="btn btn-primary" href="/palmvellum/app/" rel="noopener">
-          <span class="btn-prefix">▸</span>launch web companion
+        <a class="btn btn-primary" href="/palmvellum/app/palm" rel="noopener">
+          <span class="btn-prefix">▸</span><span data-i18n="hero.cta.app">launch organizers</span>
         </a>
         <a class="btn" href="https://github.com/palmvellum/palmvellum" rel="noopener">
-          <span class="btn-prefix">$</span>git clone palmvellum
+          <span class="btn-prefix">$</span><span data-i18n="hero.cta.github">git clone palmvellum</span>
         </a>
-        <a class="btn" href="#manifesto">
+        <a class="btn" href="#manifesto" data-i18n="hero.cta.manifesto">
           read manifesto
         </a>
       </div>
@@ -74,206 +81,148 @@
     <!-- ─────────── COUNTERS ─────────── -->
     <section class="counter-strip">
       <div class="counter">
-        <div class="counter-num">19</div>
-        <div class="counter-label">supported devices</div>
+        <div class="counter-num">2× AAA</div>
+        <div class="counter-label" data-i18n="counter.battery">corner-shop batteries</div>
+      </div>
+      <div class="counter">
+        <div class="counter-num">160×160</div>
+        <div class="counter-label" data-i18n="counter.screen">monochrome screen</div>
       </div>
       <div class="counter">
         <div class="counter-num">0</div>
-        <div class="counter-label">radios on device</div>
-      </div>
-      <div class="counter">
-        <div class="counter-num">2× AAA</div>
-        <div class="counter-label">grocery store batteries</div>
+        <div class="counter-label" data-i18n="counter.radio">radios on device</div>
       </div>
       <div class="counter">
         <div class="counter-num">1996</div>
-        <div class="counter-label">oldest target</div>
+        <div class="counter-label" data-i18n="counter.oldest">oldest reference</div>
       </div>
       <div class="counter">
         <div class="counter-num">2003</div>
-        <div class="counter-label">youngest target</div>
+        <div class="counter-label" data-i18n="counter.youngest">youngest reference</div>
       </div>
     </section>
 
     <!-- ─────────── WHAT ─────────── -->
     <section class="section" id="what">
       <h2 class="section-title">
-        <span class="prompt">&gt;_</span> what is this
+        <span class="prompt">&gt;_</span> <span data-i18n="what.title">what is this</span>
       </h2>
 
       <div class="prose">
-        <p>
-          PalmVellum is a movement and a platform — a coordinated
-          effort by lo-fi computing enthusiasts to revive a specific
-          family of vintage hardware as <strong>useful tools for 2026
-          daily work</strong>.
+        <p data-i18n="what.p1">
+          PalmVellum is an open-source platform that gives the native apps on a 1996–2003 Palm Pilot AI-assist and cloud sync — while leaving the Palm itself completely alone.
         </p>
-        <p>
-          The hardware: Palm Pilot family devices manufactured between
-          <strong>1996 and 2003 that run on two AAA alkaline
-          batteries</strong>. They are the only consumer hardware ever
-          shipped that satisfies every property below simultaneously:
+        <p data-i18n="what.p2">
+          You write on the Palm because it's quiet. Two AAA batteries. 160×160 monochrome screen. No always-on radio. No camera. No infinite scroll. You hold it, you note things down, you put it away. The platform watches the cloud copy and helps when called.
+        </p>
+        <h3 class="prose-sub" data-i18n="what.lowfiHead">What "low-fi" means here</h3>
+        <p data-i18n="what.lowfiBody">
+          Not low quality. Not retro for retro's sake. <strong>Low-fi = low fidelity, deliberately.</strong> Fewer pixels, fewer notifications, fewer pretexts to pick up the device. The platform brings AI and cloud in where they're genuinely useful — natural-language input parsing, transcription of handwritten sketches, daily research digests, agentic event / task creation — and stops there. We don't profile you. We don't show ads. There is no profile.
         </p>
       </div>
-
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>property</th>
-            <th class="us">2-AAA Palm</th>
-            <th>iPhone</th>
-            <th>YubiKey</th>
-            <th>Trezor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>wireless radios present</td><td class="us"><b>0</b></td><td>6</td><td>1</td><td>1</td></tr>
-          <tr><td>listed in any CVE database</td><td class="us"><b>no</b></td><td>daily</td><td>sometimes</td><td>sometimes</td></tr>
-          <tr><td>battery degrades on shelf</td><td class="us"><b>no</b></td><td>yes</td><td>n/a</td><td>n/a</td></tr>
-          <tr><td>10-year cold-storage revival</td><td class="us"><b>yes</b></td><td>no</td><td>n/a</td><td>n/a</td></tr>
-          <tr><td>user-swappable battery</td><td class="us"><b>yes</b></td><td>no</td><td>n/a</td><td>n/a</td></tr>
-          <tr><td>2026 acquire price (USD)</td><td class="us"><b>~$15</b></td><td>$1,500</td><td>$50</td><td>$169</td></tr>
-          <tr><td>open source end-to-end</td><td class="us"><b>yes</b></td><td>no</td><td>partial</td><td>partial</td></tr>
-        </tbody>
-      </table>
     </section>
 
     <!-- ─────────── MANIFESTO ─────────── -->
     <section class="section" id="manifesto">
       <h2 class="section-title">
-        <span class="prompt">&gt;_</span> the manifesto
+        <span class="prompt">&gt;_</span> <span data-i18n="manifesto.title">the manifesto</span>
       </h2>
-
-      <p class="m-lead">
-        PalmVellum is an open-source platform that gives the native apps on a 1996–2003 Palm Pilot AI-assist and cloud sync — while leaving the Palm itself completely alone. You write on the Palm because it's quiet. Two AAA batteries. 160×160 monochrome screen. No always-on radio. No camera. No infinite scroll. The platform watches the cloud copy and helps when called.
-      </p>
-
-      <h3 class="m-subhead">What "low-fi" means here</h3>
-      <p class="m-para">
-        Not low quality. Not retro for retro's sake. <strong>Low-fi = low fidelity, deliberately.</strong> Fewer pixels, fewer notifications, fewer pretexts to pick up the device. The platform brings AI and cloud in where they're genuinely useful — natural-language input parsing, transcription of handwritten sketches, daily research digests, agentic event / task creation — and stops there. We don't profile you. We don't show ads. There is no profile.
-      </p>
 
       <ol class="manifesto-list">
         <li>
           <span class="m-num">01</span>
-          <span class="m-text"><strong>The Palm hardware is the trust root.</strong> No radio. It cannot leak. Everything that matters can stay on the device; what you sync to the cloud is your choice.</span>
+          <span class="m-text" data-i18n="manifesto.p1"><strong>The Palm hardware is the trust root.</strong> No radio. It cannot leak. Everything that matters can stay on the device; what you sync to the cloud is your choice.</span>
         </li>
         <li>
           <span class="m-num">02</span>
-          <span class="m-text"><strong>Low-fi is deliberate.</strong> A working Palm IIIe in 2026 was built in 1999, paid for once, and asks for two AAA batteries a year. We respect what's already in your drawer.</span>
+          <span class="m-text" data-i18n="manifesto.p2"><strong>Low-fi is deliberate.</strong> A working Palm IIIe in 2026 was built in 1999, paid for once, and asks for two AAA batteries a year. We respect what's already in your drawer.</span>
         </li>
         <li>
           <span class="m-num">03</span>
-          <span class="m-text"><strong>The community owns the foundation.</strong> Toolchain, daemon, schema, HotSync engine, sync conduits, threat model — all Apache 2.0 on GitHub.</span>
+          <span class="m-text" data-i18n="manifesto.p3"><strong>The community owns the foundation.</strong> Toolchain, daemon, schema, HotSync engine, sync conduits — all Apache 2.0 on GitHub.</span>
         </li>
         <li>
           <span class="m-num">04</span>
-          <span class="m-text"><strong>BYOK or platform credits — your choice.</strong> Bring your own OpenAI / Anthropic key and pay nothing. Or buy platform credits via Airwallex. Both are first-class; neither is mandatory.</span>
+          <span class="m-text" data-i18n="manifesto.p4"><strong>BYOK or platform credits — your choice.</strong> Bring your own OpenAI, Anthropic, or Google Gemini key and pay nothing. Or buy platform credits via Airwallex. Both are first-class; neither is mandatory.</span>
         </li>
         <li>
           <span class="m-num">05</span>
-          <span class="m-text"><strong>No social, no analytics, no email marketing.</strong> You write the records, you own them. We do not aggregate, sell, or recommend.</span>
+          <span class="m-text" data-i18n="manifesto.p5"><strong>No social, no analytics, no email marketing.</strong> You write the records, you own them. We do not aggregate, sell, or recommend.</span>
         </li>
         <li>
           <span class="m-num">06</span>
-          <span class="m-text"><strong>The Palm stays Palm.</strong> We will never push custom firmware. The platform speaks existing HotSync to existing Palm OS apps. Our reference target and design focus is the AAA-battery family (1996–2003) — that's the device we believe in and test on. The platform itself just speaks HotSync, so other Palm OS devices outside our target are welcome to use it too; we just won't be testing those.</span>
+          <span class="m-text" data-i18n="manifesto.p6"><strong>The Palm stays Palm.</strong> We will never push custom firmware. The platform speaks existing HotSync to existing Palm OS apps. Our reference target and design focus is the AAA-battery family (1996–2003) — that's the device we believe in and test on. The platform itself just speaks HotSync, so other Palm OS devices outside our target are welcome to use it too; we just won't be testing those.</span>
         </li>
       </ol>
 
-      <h3 class="m-subhead">What the platform does</h3>
-      <p class="m-para">
+      <h3 class="m-subhead" data-i18n="platform.title">What the platform does</h3>
+      <p class="m-para" data-i18n="platform.intro">
         Each native Palm OS app gets a partner surface in the platform "Organizers" dashboard. Same data on both sides. Multiple Palms in the same household read and write the same records.
       </p>
       <ul class="m-features">
-        <li><strong>Date Book.</strong> Paste any rough text — "Coffee with May Friday 3pm" — AI parses it into a structured event. Manual create / edit too.</li>
-        <li><strong>To Do List.</strong> Tasks with priority and due dates. Prefix with <code>(AI)</code> and an agent executes the prompt and writes the result back as a Memo.</li>
-        <li><strong>Memo Pad.</strong> Notes sync both ways. Memos prefixed <code>(AI)</code> trigger an agent that creates events / tasks and appends a summary. Upload a PDF, DOCX, or image and AI summarises it into a memo.</li>
-        <li><strong>Address Book.</strong> Contacts with rich fields and categories.</li>
-        <li><strong>Note Pad.</strong> Sketches arrive from your Palm. Vision AI transcribes handwriting and describes drawings.</li>
-        <li><strong>Mail.</strong> Per-source AI digest of a website, or topic-mode where AI uses web search to write a 10-20 minute research article with cited sources, in the language you choose.</li>
-        <li><strong>Expense.</strong> Multi-currency log with category totals.</li>
+        <li data-i18n="platform.datebook"><strong>Date Book.</strong> Paste any rough text — "Coffee with May Friday 3pm" — AI parses it into a structured event. Manual create / edit too.</li>
+        <li data-i18n="platform.todo"><strong>To Do List.</strong> Tasks with priority and due dates. Prefix with <code>(AI)</code> and an agent executes the prompt and writes the result back as a Memo.</li>
+        <li data-i18n="platform.memo"><strong>Memo Pad.</strong> Notes sync both ways. Memos prefixed <code>(AI)</code> trigger an agent that creates events / tasks and appends a summary. Upload a PDF, DOCX, or image and AI summarises it into a memo.</li>
+        <li data-i18n="platform.address"><strong>Address Book.</strong> Contacts with rich fields and categories.</li>
+        <li data-i18n="platform.notepad"><strong>Note Pad.</strong> Sketches arrive from your Palm. Vision AI transcribes handwriting and describes drawings.</li>
+        <li data-i18n="platform.mail"><strong>Mail.</strong> Per-source AI digest of a website, or topic-mode where AI uses web search to write a 10-20 minute research article with cited sources, in the language you choose.</li>
+        <li data-i18n="platform.expense"><strong>Expense.</strong> Multi-currency log with category totals.</li>
       </ul>
 
-      <h3 class="m-subhead">Goal</h3>
-      <p class="m-para">
+      <h3 class="m-subhead" data-i18n="goal.title">Goal</h3>
+      <p class="m-para" data-i18n="goal.body">
         Help you accumulate a slow, deliberate body of personal records — calendar, contacts, notes, sketches, research digests, expenses — without being interrupted by your own tools. The Palm holds them in cold storage on AAA batteries. The platform holds the duplicate cloud copy and runs the AI assist whenever called. A native Android companion app, <strong>Palm Organizers</strong>, is in preparation.
       </p>
     </section>
 
-    <!-- ─────────── APPS ─────────── -->
+    <!-- ─────────── APPS / PACKAGES ─────────── -->
     <section class="section" id="apps">
       <h2 class="section-title">
-        <span class="prompt">&gt;_</span> apps
+        <span class="prompt">&gt;_</span> <span data-i18n="apps.title">what's in the repo</span>
       </h2>
 
       <div class="prose">
-        <p>
-          A small family of focused apps. Five open source under
-          Apache 2.0; one commercial superapp that handles cloud-side
-          heavy lifting. Same open protocol.
+        <p data-i18n="apps.intro">
+          Apache 2.0 on GitHub. The repo is a pnpm + Go monorepo with a small set of focused packages.
         </p>
       </div>
 
-      <h3 class="app-group-title">open source family</h3>
       <div class="apps-grid">
         <article class="app-card">
           <div class="app-tag">apache 2.0</div>
-          <h4 class="app-name">PalmVellum Core</h4>
-          <p class="app-desc">Toolchain, Mac daemon, shared schema, HotSync bridge.</p>
-          <span class="app-status status-active">v0.1 active</span>
+          <h4 class="app-name">PWA (Organizers)</h4>
+          <p class="app-desc" data-i18n="apps.pwa">SvelteKit 2 + Svelte 5 dashboard. Date Book / To Do / Address / Memo / Note Pad / Mail / Expense.</p>
+          <span class="app-status status-active">v0.5 live</span>
         </article>
         <article class="app-card">
           <div class="app-tag">apache 2.0</div>
-          <h4 class="app-name">Palm Wallet</h4>
-          <p class="app-desc">Cold signer — BTC + ETH offline signing via QR.</p>
-          <span class="app-status">planned</span>
+          <h4 class="app-name">sync-cli (vellum-sync)</h4>
+          <p class="app-desc" data-i18n="apps.synccli">Go CLI. Bridges PalmOS Memo Pad / To Do DB &lt;-&gt; Supabase. Push, pull, sync.</p>
+          <span class="app-status status-active">v0.5 live</span>
         </article>
         <article class="app-card">
           <div class="app-tag">apache 2.0</div>
-          <h4 class="app-name">QR Card</h4>
-          <p class="app-desc">vCard QR exporter for sharing contacts with iOS / Android.</p>
-          <span class="app-status">planned</span>
+          <h4 class="app-name">palm-app</h4>
+          <p class="app-desc" data-i18n="apps.palmapp">Cross-compiled PalmOS .prc artifacts. m68k DragonBall, Palm OS 3.1 baseline.</p>
+          <span class="app-status">scaffold</span>
         </article>
         <article class="app-card">
           <div class="app-tag">apache 2.0</div>
-          <h4 class="app-name">VellumCN</h4>
-          <p class="app-desc">中文 localization + IME (Cangjie / Pinyin / Sucheng).</p>
-          <span class="app-status">planned</span>
+          <h4 class="app-name">mac-daemon</h4>
+          <p class="app-desc" data-i18n="apps.macdaemon">Future Network HotSync daemon. Go + modernc.org/sqlite, no CGO.</p>
+          <span class="app-status">in progress</span>
         </article>
         <article class="app-card">
           <div class="app-tag">apache 2.0</div>
-          <h4 class="app-name">Dream Diary</h4>
-          <p class="app-desc">Stylus dream notes → AI bedtime stories at next sync.</p>
-          <span class="app-status">planned</span>
+          <h4 class="app-name">android (Palm Organizers)</h4>
+          <p class="app-desc" data-i18n="apps.android">Capacitor wrapper around the SvelteKit dashboard. Native Android APK / AAB.</p>
+          <span class="app-status status-soon">in prep</span>
         </article>
         <article class="app-card">
           <div class="app-tag">apache 2.0</div>
-          <h4 class="app-name">News Feed</h4>
-          <p class="app-desc">User-curated daily news, AI-summarized, pushed to Palm.</p>
-          <span class="app-status">planned</span>
-        </article>
-      </div>
-
-      <h3 class="app-group-title">commercial superapp + platform</h3>
-      <div class="apps-grid">
-        <article class="app-card app-card-commercial">
-          <div class="app-tag tag-commercial">free + subscription</div>
-          <h4 class="app-name">PalmVellum AI</h4>
-          <p class="app-desc">
-            The flagship superapp. Native Datebook / Address / ToDo /
-            Memo integration. AI Oracle, vault, AES storage,
-            teleprompter, mind-map, AI-generated Palm programs.
-          </p>
-          <span class="app-status status-soon">in design</span>
-        </article>
-        <article class="app-card app-card-commercial">
-          <div class="app-tag tag-commercial">free quota + paid AI</div>
-          <h4 class="app-name">PalmVellum Platform</h4>
-          <p class="app-desc">
-            The cloud back-end. Only AI-driven features are metered;
-            non-AI features stay free forever.
-          </p>
-          <span class="app-status status-soon">in design</span>
+          <h4 class="app-name">supabase</h4>
+          <p class="app-desc" data-i18n="apps.supabase">SQL migrations + Deno Edge Functions. AI agent, mail fetcher, sketch transcribe, upload summary.</p>
+          <span class="app-status status-active">live</span>
         </article>
       </div>
     </section>
@@ -281,13 +230,12 @@
     <!-- ─────────── DEVICES ─────────── -->
     <section class="section" id="devices">
       <h2 class="section-title">
-        <span class="prompt">&gt;_</span> 19 devices, exactly
+        <span class="prompt">&gt;_</span> <span data-i18n="devices.title">reference hardware</span>
       </h2>
 
       <div class="prose">
-        <p>
-          The supported list is closed by design. No rechargeable
-          Palms. No ARM Palms. No radio-equipped Palms.
+        <p data-i18n="devices.intro">
+          Our reference target is the AAA-battery Palm family. That's the device we test on and design the UI for. The platform itself just speaks HotSync, so other Palm OS devices outside this list are welcome to use it too — we just won't be testing those.
         </p>
       </div>
 
@@ -325,8 +273,8 @@
           <ul>
             <li class="device-ref">PEG-SL10 ★ <span class="device-year">2002</span></li>
           </ul>
-          <p class="device-note">
-            Only AAA Clié + only hi-res 320×320 mono in scope.
+          <p class="device-note" data-i18n="devices.sonyNote">
+            The only AAA Sony Clié + only hi-res 320×320 mono in scope.
           </p>
         </div>
       </div>
@@ -335,26 +283,23 @@
     <!-- ─────────── GET INVOLVED ─────────── -->
     <section class="section" id="contribute">
       <h2 class="section-title">
-        <span class="prompt">&gt;_</span> get involved
+        <span class="prompt">&gt;_</span> <span data-i18n="contribute.title">get involved</span>
       </h2>
 
       <div class="prose">
-        <p>
-          PalmVellum is pre-1.0. We're looking for hardware testers,
-          translators (繁中 / 简中 / 日本語 / Español first), logo
-          designers, documentation contributors, and qualified
-          cryptographic reviewers.
+        <p data-i18n="contribute.body">
+          PalmVellum is pre-1.0. We're looking for hardware testers, translators (繁中 / 简中 / 日本語 / 한국어 / Русский / Español), logo designers, and documentation contributors.
         </p>
       </div>
 
       <div class="cta-row">
         <a class="btn btn-primary" href="https://github.com/palmvellum/palmvellum">
-          <span class="btn-prefix">$</span>view on github
+          <span class="btn-prefix">$</span><span data-i18n="contribute.github">view on github</span>
         </a>
-        <a class="btn" href="https://github.com/palmvellum/palmvellum/issues">
+        <a class="btn" href="https://github.com/palmvellum/palmvellum/issues" data-i18n="contribute.issues">
           open issues
         </a>
-        <a class="btn" href="https://github.com/palmvellum/palmvellum/discussions">
+        <a class="btn" href="https://github.com/palmvellum/palmvellum/discussions" data-i18n="contribute.discussions">
           discussions
         </a>
       </div>
@@ -363,32 +308,23 @@
     <!-- ─────────── SUPPORT ─────────── -->
     <section class="section" id="support">
       <h2 class="section-title">
-        <span class="prompt">&gt;_</span> support the research
+        <span class="prompt">&gt;_</span> <span data-i18n="support.title">support the research</span>
       </h2>
 
       <div class="prose">
-        <p>
-          PalmVellum is researched, designed, and built by
-          <strong>one person in Hong Kong</strong> on evenings and
-          weekends. No company, no sponsors, no VC. Every cradle
-          bought, every Palm dumped, every datasheet re-read, every
-          line of m68k assembly tuned — paid out of pocket.
+        <p data-i18n="support.p1">
+          PalmVellum is researched, designed, and built by <strong>one person in Hong Kong</strong> on evenings and weekends. No company, no sponsors, no VC. Every cradle bought, every Palm dumped, every datasheet re-read — paid out of pocket.
         </p>
-        <p>
-          <strong>The price of one coffee is enough to keep the
-          research going for another evening.</strong> If this work
-          means something to you — the nostalgia, the security model,
-          the simple fact that a 1999 device can outlive your phone —
-          that's all it takes to support the next open-source
-          PalmVellum app.
+        <p data-i18n="support.p2">
+          <strong>The price of one coffee is enough to keep the research going for another evening.</strong> If this work means something to you — the nostalgia, the simple fact that a 1999 device can outlive your phone — that's all it takes to support the next PalmVellum release.
         </p>
       </div>
 
       <div class="cta-row">
         <a class="btn btn-primary" href="https://pay.airwallex.com/hkhj4bexfok1" target="_blank" rel="noopener noreferrer">
-          <span class="btn-prefix">$</span>support the research
+          <span class="btn-prefix">$</span><span data-i18n="support.cta">support the research</span>
         </a>
-        <span class="support-note">≈ <em>US$5</em> — one coffee, one more research evening.</span>
+        <span class="support-note" data-i18n="support.note">≈ <em>US$5</em> — one coffee, one more research evening.</span>
       </div>
     </section>
 
@@ -397,10 +333,10 @@
       <div class="footer-grid">
         <div>
           <strong>palmvellum</strong>
-          <p class="muted">A movement. Not a single app.</p>
+          <p class="muted" data-i18n="footer.tagline">Slow tools for fast lives.</p>
         </div>
         <div>
-          <strong>code</strong>
+          <strong data-i18n="footer.code">code</strong>
           <ul>
             <li><a href="https://github.com/palmvellum">github org</a></li>
             <li><a href="https://github.com/palmvellum/palmvellum">core repo</a></li>
@@ -408,16 +344,16 @@
           </ul>
         </div>
         <div>
-          <strong>docs</strong>
+          <strong data-i18n="footer.docs">docs</strong>
           <ul>
-            <li><a href="https://github.com/palmvellum/palmvellum/blob/main/docs/threat-model.md">threat model</a></li>
-            <li><a href="https://github.com/palmvellum/palmvellum/blob/main/docs/crypto-spec.md">crypto spec</a></li>
+            <li><a href="https://github.com/palmvellum/palmvellum/blob/main/README.md">readme</a></li>
             <li><a href="https://github.com/palmvellum/palmvellum/blob/main/docs/hardware-compatibility.md">hardware compat</a></li>
             <li><a href="https://github.com/palmvellum/palmvellum/blob/main/ROADMAP.md">roadmap</a></li>
+            <li><a href="https://github.com/palmvellum/palmvellum/blob/main/CHANGELOG.md">changelog</a></li>
           </ul>
         </div>
         <div>
-          <strong>built on</strong>
+          <strong data-i18n="footer.builton">built on</strong>
           <ul>
             <li><a href="https://github.com/jichu4n/palm-sync">palm-sync</a></li>
             <li><a href="https://github.com/jichu4n/prc-tools-remix">prc-tools-remix</a></li>
@@ -425,25 +361,24 @@
             <li><a href="https://palmdb.net/">PalmDB</a></li>
           </ul>
         </div>
-
         <div>
-          <strong>support</strong>
+          <strong data-i18n="footer.support">support</strong>
           <ul>
-            <li><a href="https://pay.airwallex.com/hkhj4bexfok1" target="_blank" rel="noopener noreferrer">support the research</a></li>
-            <li><a href="#support">why ≈ US$5?</a></li>
+            <li><a href="https://pay.airwallex.com/hkhj4bexfok1" target="_blank" rel="noopener noreferrer" data-i18n="footer.supportLink">support the research</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 PalmVellum contributors.</span>
-        <span>Hosted on <a href="https://tatliving.dev/">tatliving.dev</a></span>
-        <span class="muted">best viewed on a 1999 Palm IIIe</span>
+        <span data-i18n="footer.copyright">© 2026 PalmVellum contributors.</span>
+        <span data-i18n="footer.hostedOn">Hosted on <a href="https://tatliving.dev/">tatliving.dev</a></span>
+        <span class="muted" data-i18n="footer.bestViewed">best viewed on a 1999 Palm IIIe</span>
       </div>
     </footer>
 
   </main>
 
+  <script src="./i18n.js" defer></script>
   <script src="./script.js" defer></script>
 </body>
 </html>

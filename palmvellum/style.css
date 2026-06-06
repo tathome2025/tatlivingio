@@ -497,3 +497,36 @@ main {
   .manifesto-list li { grid-template-columns: 48px 1fr; gap: 12px; }
   .device-col { padding: 14px; }
 }
+
+/* ─── Language picker (in window chrome) ────────────────── */
+.lang-picker {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
+  font: inherit;
+  font-size: 0.7rem;
+  padding: 0.05rem 0.25rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.lang-picker:hover, .lang-picker:focus {
+  color: #ffd600;
+  border-color: rgba(255, 214, 0, 0.4);
+  outline: none;
+}
+.lang-picker option {
+  background: #2d2d2d;
+  color: #fff;
+}
+
+/* prose-sub used in the new What section */
+.prose-sub {
+  font-family: inherit;
+  color: #ffd600;
+  font-size: 1rem;
+  margin: 1.3rem 0 0.5rem;
+  text-transform: lowercase;
+  letter-spacing: 0.03em;
+}
