@@ -498,19 +498,6 @@ main {
   .device-col { padding: 14px; }
 }
 
-/* ─── Language picker (in window chrome) ────────────────── */
-.lang-picker {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.7);
-  font: inherit;
-  font-size: 0.7rem;
-  padding: 0.05rem 0.25rem;
-  margin-right: 0.5rem;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
 .lang-picker:hover, .lang-picker:focus {
   color: #ffd600;
   border-color: rgba(255, 214, 0, 0.4);
@@ -519,6 +506,73 @@ main {
 .lang-picker option {
   background: #2d2d2d;
   color: #fff;
+}
+
+/* ─── Language picker (prominent, in window chrome) ────── */
+.lang-picker-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  margin-right: 8px;
+  padding: 0 10px 0 8px;
+  background: rgba(255, 214, 0, 0.08);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.lang-picker-wrap:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+.lang-globe {
+  font-size: 14px;
+  line-height: 1;
+}
+.lang-label {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.lang-caret {
+  font-size: 10px;
+  line-height: 1;
+  opacity: 0.85;
+}
+/* Native <select> sits on top, invisible, so the styled wrapper
+   shows through but the OS native menu still opens on click. */
+.lang-picker {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  color: transparent;
+  font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.lang-picker option {
+  background: #2d2d2d;
+  color: #fff;
+  font-family: 'IBM Plex Mono', sans-serif;
+}
+/* Mobile: shrink slightly so the chrome row still fits */
+@media (max-width: 480px) {
+  .lang-picker-wrap {
+    font-size: 11px;
+    padding: 0 6px;
+    height: 20px;
+  }
+  .lang-globe { font-size: 12px; }
+  .lang-label { display: none; }  /* keep just globe + caret */
 }
 
 /* prose-sub used in the new What section */
