@@ -144,28 +144,60 @@
         <span class="prompt">&gt;_</span> the manifesto
       </h2>
 
+      <p class="m-lead">
+        PalmVellum is an open-source platform that gives the native apps on a 1996–2003 Palm Pilot AI-assist and cloud sync — while leaving the Palm itself completely alone. You write on the Palm because it's quiet. Two AAA batteries. 160×160 monochrome screen. No always-on radio. No camera. No infinite scroll. The platform watches the cloud copy and helps when called.
+      </p>
+
+      <h3 class="m-subhead">What "low-fi" means here</h3>
+      <p class="m-para">
+        Not low quality. Not retro for retro's sake. <strong>Low-fi = low fidelity, deliberately.</strong> Fewer pixels, fewer notifications, fewer pretexts to pick up the device. The platform brings AI and cloud in where they're genuinely useful — natural-language input parsing, transcription of handwritten sketches, daily research digests, agentic event / task creation — and stops there. We don't profile you. We don't show ads. There is no profile.
+      </p>
+
       <ol class="manifesto-list">
         <li>
           <span class="m-num">01</span>
-          <span class="m-text">The Palm hardware is the trust root. It has no radio. It cannot leak. Everything that matters happens on the device.</span>
+          <span class="m-text"><strong>The Palm hardware is the trust root.</strong> No radio. It cannot leak. Everything that matters can stay on the device; what you sync to the cloud is your choice.</span>
         </li>
         <li>
           <span class="m-num">02</span>
-          <span class="m-text">Lo-fi is sustainability. A working Palm IIIe in 2026 was built in 1999 from materials and labor already spent.</span>
+          <span class="m-text"><strong>Low-fi is deliberate.</strong> A working Palm IIIe in 2026 was built in 1999, paid for once, and asks for two AAA batteries a year. We respect what's already in your drawer.</span>
         </li>
         <li>
           <span class="m-num">03</span>
-          <span class="m-text">The community owns the foundation. Toolchain, daemon, schema, HotSync engine, threat model — all Apache 2.0.</span>
+          <span class="m-text"><strong>The community owns the foundation.</strong> Toolchain, daemon, schema, HotSync engine, sync conduits, threat model — all Apache 2.0 on GitHub.</span>
         </li>
         <li>
           <span class="m-num">04</span>
-          <span class="m-text">The commercial layer is opt-in. AI features cost real money to run; we sell a fair-priced subscription. Self-hosting allowed.</span>
+          <span class="m-text"><strong>BYOK or platform credits — your choice.</strong> Bring your own OpenAI / Anthropic key and pay nothing. Or buy platform credits via Airwallex. Both are first-class; neither is mandatory.</span>
         </li>
         <li>
           <span class="m-num">05</span>
-          <span class="m-text">We do not gatekeep the platform. Anyone may publish a PalmVellum-compatible app, with or without our blessing.</span>
+          <span class="m-text"><strong>No social, no analytics, no email marketing.</strong> You write the records, you own them. We do not aggregate, sell, or recommend.</span>
+        </li>
+        <li>
+          <span class="m-num">06</span>
+          <span class="m-text"><strong>The Palm stays Palm.</strong> We will never push custom firmware. The platform speaks existing HotSync to existing PalmOS apps. Hardware support strictly limited to AAA-battery Palms (1996–2003) — 19 specific models. No Treos, no Tungstens, no radios.</span>
         </li>
       </ol>
+
+      <h3 class="m-subhead">What the platform does</h3>
+      <p class="m-para">
+        Each native Palm OS app gets a partner surface in the platform "Organizers" dashboard. Same data on both sides. Multiple Palms in the same household read and write the same records.
+      </p>
+      <ul class="m-features">
+        <li><strong>Date Book.</strong> Paste any rough text — "Coffee with May Friday 3pm" — AI parses it into a structured event. Manual create / edit too.</li>
+        <li><strong>To Do List.</strong> Tasks with priority and due dates. Prefix with <code>(AI)</code> and an agent executes the prompt and writes the result back as a Memo.</li>
+        <li><strong>Memo Pad.</strong> Notes sync both ways. Memos prefixed <code>(AI)</code> trigger an agent that creates events / tasks and appends a summary. Upload a PDF, DOCX, or image and AI summarises it into a memo.</li>
+        <li><strong>Address Book.</strong> Contacts with rich fields and categories.</li>
+        <li><strong>Note Pad.</strong> Sketches arrive from your Palm. Vision AI transcribes handwriting and describes drawings.</li>
+        <li><strong>Mail.</strong> Per-source AI digest of a website, or topic-mode where AI uses web search to write a 10-20 minute research article with cited sources, in the language you choose.</li>
+        <li><strong>Expense.</strong> Multi-currency log with category totals.</li>
+      </ul>
+
+      <h3 class="m-subhead">Goal</h3>
+      <p class="m-para">
+        Help you accumulate a slow, deliberate body of personal records — calendar, contacts, notes, sketches, research digests, expenses — without being interrupted by your own tools. The Palm holds them in cold storage on AAA batteries. The platform holds the duplicate cloud copy and runs the AI assist whenever called. A native Android companion app, <strong>Palm Organizers</strong>, is in preparation.
+      </p>
     </section>
 
     <!-- ─────────── APPS ─────────── -->
