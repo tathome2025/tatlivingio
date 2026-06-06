@@ -508,6 +508,17 @@ main {
   color: #fff;
 }
 
+
+/* Override .chrome-controls span (22px chrome button) styling for the
+   picker — its inner spans (globe / label / caret) must not be boxed
+   into individual chrome buttons, or the 'Language' text gets clipped. */
+.chrome-controls .lang-picker-wrap,
+.chrome-controls .lang-picker-wrap span {
+  width: auto;
+  background: transparent;
+  border: 0;
+  text-align: left;
+}
 /* ─── Language picker (prominent, in window chrome) ────── */
 .lang-picker-wrap {
   position: relative;
