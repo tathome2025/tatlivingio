@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "dev.tatliving.palmvellum.organizers",
+      "sha256_cert_fingerprints": [
+        "87:8E:BB:DD:9B:CC:71:CC:EA:82:3A:BE:A5:01:AF:BF:B2:36:03:1E:BC:3A:26:50:93:0C:D8:24:D4:24:94:BB"
+      ]
+    }
+  }
+]
